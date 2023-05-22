@@ -24,6 +24,6 @@ variable "list_of_private_subnet_az" {
 
 variable "list_of_private_subnet_cidr" {
   type = list(string)
-  default = ["10.0.0.0/24", "10.0.5.0/24"]
+  default = ["10.0.10.0/24", "10.0.15.0/24"]
   description = "List of Public subnet CIDR"
 }
