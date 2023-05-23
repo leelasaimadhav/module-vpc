@@ -94,7 +94,7 @@ resource aws_eip "nat_gateway_eip"{
 resource "aws_route_table_association" "public_subnets_association" {
   count = length(var.list_of_public_subnet_az)
   route_table_id = aws_route_table.public_route_table.id
-  subnet_id = aws_subnet.public_subnet[*].id
+  subnet_id = element(aws_subnet.public_subnet[*].id, count.index)
 }
 
 #resource "aws_route_table_association" "public_subnet_2_association" {
