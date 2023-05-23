@@ -27,7 +27,7 @@ resource "aws_subnet" "public_subnet" {
   lifecycle {
     precondition {
       condition     = length(var.list_of_public_subnet_az) / length(var.list_of_public_subnet_cidr) == 1
-      error_message = "The length of list_of_public_subnet_az  (${var.list_of_public_subnet_az}) must be equals to  length of list_of_public_subnet_cidr (${length(var.list_of_public_subnet_cidr)})."
+      error_message = "The length of list_of_public_subnet_az  (${length(var.list_of_public_subnet_az)}) must be equals to  length of list_of_public_subnet_cidr (${length(var.list_of_public_subnet_cidr)})."
     }
   }
 }
